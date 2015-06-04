@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/fuente/style.css">
+	<link rel="stylesheet" type="text/css" href="css/core.css">
+	<link rel=icon href="img/favicon.png" sizes="16x16">
+	<script type="text/javascript">
+//FUNCIÓN JAVASCRIPT PARA EL SELECTOR DE ACCION DE LA PÁGINA
+function cambiar(but1,but2,but3,item1,item2,item3){
+		document.getElementById(but1).style.backgroundColor = "#008AAA";
+		document.getElementById(but1).style.color = "#D8D8D8";
+		document.getElementById(but2,but3).style.backgroundColor = "#D8D8D8";
+		document.getElementById(but2,but3).style.color = "#00CAF2";
+		document.getElementById(but3).style.backgroundColor = "#D8D8D8";
+		document.getElementById(but3).style.color = "#00CAF2";
+		document.getElementById(item1).style.display = "table";
+		document.getElementById(item2).style.display = "none";
+		document.getElementById(item3).style.display = "none";
+	};
+	</script>
+	<title>PHP-ESM-Admin</title>
+</head>
+<body>
+<table class="tabmenu">
+	<tr align="center"><th><a href="https://github.com/ishmilan"  target="_blank"><br>Developed by:<br><img src="img/icon.png"></a></th><th><br><br><h1 style="font-size: 3.5rem;color: #F97C17;">PHP-ESM-Admin</h1><h3>Administrador de la Empresa Sergio Milán en PHP</h3></th></tr>
+	<tr><th colspan="2"><hr><br></th></tr>
+	<tr><td></td></tr><tr><td colspan="2" align="left"><a name="indice"></a>
+		<ol class="ayuda"><h2 style="text-align: center;">Breve ayuda para el usuario<br><a href="index.php"><button class="botatras"><span class="icon-arrow-left"></span></button></a>
+		</h2>
+		<ol>
+			<li><a href="#intro">Introducción:</a></li>
+			<li><a href="#menu">El menú:</a></li>
+			<li><a href="#boton">Los botones:</a></li>
+			<li><a href="#consulta">Las consultas:</a></li>
+		</ol>
+		</li>
+		<li><a name="intro"></a>Introducción:
+			<dd><p>Esta aplicación es un administrador de una base de datos diseñada para la gestión de una empresa de servicios veterinarios. Está desarrollada por <a href="https://github.com/ishmilan"  target="_blank"><abbr title="Ir al github de IshMilan">Ismael Milán Márquez</abbr></a>. A continuación se detalla brevemente el funcionamiento de la aplicación <font color="#F97C17"><abbr title="PHP-ESM-Admin">PEA</abbr></font>, para una información mas técnica lea el manual de la aplicación. Si desea alguna adaptación de la aplicación para sus necesidades contacte con el desarrollador o modifiquela usted mismo ya que está registrada bajo licencia <a href="https://gplv3.fsf.org"  target="_blank"><abbr title="General Public License versión 3">GPL3</abbr></a>.</p><p style="font-style: normal;"><a href="#indice">Ir al índice</a></p></dd>
+		</li>
+		<li><a name="menu"></a>El menú:
+		<dl>En el menú aparecen las siguientes entradas:
+			<dt>Ir a entradas</dt><dd>La tabla de entradas guarda un registro de los artículos adquiridos</dd>
+			<dt>Ir a salidas</dt><dd>La tabla de salidas guarda un registro de los servicios ofrecidos</dd>
+			<dt>Ir a medicamentos</dt><dd>La tabla de medicamentos almacena una breve descripción de los medicamentos</dd>
+			<dt>Comprobar caducidad de medicamentos</dt><dd>Revisa los lotes caducados</dd>
+			<dt>Ver datos de los centros de compra</dt><dd>Una tabla dónde se almacenan datos de los centros de compra</dd>
+			<dt>Ver datos de los centros de explotación</dt><dd>Una tabla dónde se almacenan datos de los centros de explotación agropecuaria</dd>
+			<dt>Ver tareas pendientes</dt><dd>La tabla de tareas pendientes sirve para dar una breve descrpición de trabajos a realizar o acciónes pendientes</dd>
+			<dt>Ver tareas terminadas</dt><dd>La tabla de tareas terminadas es dónde se guardan las tareas archivadas procedentes de pendientes</dd>
+			<p><a href="#indice">Ir al índice</a></p>
+		</dl>
+		</li>
+		<li>
+		<dl><a name="boton"></a>Los botones:
+			<dt><button><span class="icon-arrow-right"></span></button></dt><dd>Ir a.../Llevar a cabo</dd>
+			<dt><button><span class="icon-arrow-left"></span></button></dt><dd>Volver atrás</dd>
+			<dt><button><span class="icon-plus"></span></button></dt><dd>Añadir/Acción Insert</dd>
+			<dt><button><span class="icon-arrow-up"></span></button></dt><dd>Modificar/Acción Update</dd>
+			<dt><button><span class="icon-cross2"></span></button></dt><dd>Borrar/Acción Delete</dd>
+			<dt><button><span class="icon-cycle"></span></button></dt><dd>Vuelve a poner los valores por defecto en el formulario</dd>
+			<dt><button><span class="icon-checkmark"></span></button></dt><dd>Archiva las tareas pendientes en tareas terminadas</dd>
+			<p><a href="#indice">Ir al índice</a></p>
+		</dl>
+		</li>
+		<li><a name="consulta"></a>Las consultas:
+			<dd><p>Las consultas son muy similares en todas las páginas, por ello tomaremos como ejemplo la página entradas:<br><img src="img/ayuda01.png" width="100%" style="margin-left: -1.5em;"><br>
+			En la imagen se pueden apreciar 4 partes claras: el título de la página, el botón de volver atrás, un conjunto de botones y el nombre de las columnas de las tablas. El conjunto de botones, es el selector de la operación a llevar a cabo, en la mayoría de las páginas es el mismo, tiene los iconos de:<br>
+			<span class="icon-plus"></span>: para insertar registros.<br>
+			<span class="icon-cross2"></span>: para borrarlos.<br>
+			<span class="icon-arrow-up"></span>: para modificarlos.<br>
+			<span class="icon-checkmark"></span>: para archivar las tareas pendeintes.<br>
+			Seleccione el botón que desee y tendrá un formulario con el cual podrá llevar a cabo la operación deseada.<br>
+			<img src="img/ayuda02.png" width="100%" style="margin-left: -1.5em;"><br>
+			Despúes de llevar a cabo la operación deseada y debajo de la tabla, aparecen dos botones más. El primero, realiza la acción del formulario seleccionada anteriormente y el segundo vuelve a poner los valores por defecto en dicho formulario.</p>
+			<p><a href="#indice">Ir al índice</a></p>
+		</dd>
+		</li>
+	</td></tr>
+</table>
+</body>
+</html>

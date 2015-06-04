@@ -1,0 +1,386 @@
+@font-face { font-family: "Ubuntu Mono";    
+src: url(UbuntuMono.ttf); }
+@font-face { font-family: Ubuntu;    
+src: url(Ubuntu.ttf); }
+
+/***************************************\
+|										|
+|				GENERRAL				|
+|										|
+\***************************************/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+/*	background-color: #f3f3f3;*/
+	background-image: url(../img/bgd.png);
+	font-family: Ubuntu,Arial;
+	margin: 0px;
+}
+div{
+	text-align: justify;
+}
+.mainsec{
+	margin-left: auto;
+	margin-right: auto;
+	width:calc(100% - 3em);
+}
+a{
+	text-decoration: none;
+	font-weight: bold;
+	color: #3B94D9;
+}
+a:visited{
+	color: #3B94D9;
+}
+hr{
+	width: 100%;
+	margin-top: 1em;
+	background-color: #F97C17;
+	height: 0.1em;
+	margin-right: 1em;
+	border: 0px; 
+}
+ul{
+	margin-left: 0px;
+	list-style:none;
+}
+ol{
+	list-style-type: decimal-leading-zero;
+	font-weight: bolder;
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	margin-left: 5em;
+}
+ol > a{
+	color: #55b;
+}
+.ayuda{
+	font-weight: normal;
+	font-size: 1em;
+	margin-bottom: 0.5em;
+	margin-left: 0.5rem;
+}
+
+.ayuda > li {
+	margin-left: 1.5rem;
+}
+dt{
+	margin-left: 2em;
+	color: #3B94D9;
+}
+dd{
+	margin-left: 4em;
+	font-style: italic;
+}
+dd > p{
+	margin-left: -3em;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+table{
+	width: 100%;
+	background-color: #333;
+	margin: 0px;
+    border-collapse: collapse;
+}
+	tr{
+		text-align: center;
+	}
+	tr:nth-child(2n+1){
+		background-color: #F97C17;}
+	tr:nth-child(2n){
+		background-color: #f3f3f3;
+	}
+	th {
+		color: #d8d8d8;
+		background-image: url(../img/bgd.png);
+	}
+	
+
+
+/***************************************\
+|				PARRAFOS				|
+\***************************************/
+p{
+	text-indent: 1em;
+}
+p:last-child {
+	margin-bottom: 4em;
+}
+/***************************************\
+|	PRE (usado para mostrar codigo)		|
+\***************************************/
+pre {
+	font-family: "Ubuntu Mono";
+	margin-left: 10%;
+	margin-right: 10%;
+	color: #d8d8d8;
+	background-image: url(../img/bgd.png);
+	border-left: 0.4em solid #F97C17;
+	border-radius: 0.3em;
+	padding: 1em;
+	overflow-x: auto; 
+	overflow-y: auto;
+}
+/***************************************\
+|				SIDEBAR 				|
+\***************************************/
+.sidebar {
+	color: #fff;
+	display: none;
+	position: absolute;
+	top: 3em;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 3em);
+	background-image: url(../img/bgd.png);
+	overflow-x: hidden; 
+	overflow-y: auto;
+}
+	.sidebar > header {
+		background-color: #666;
+		box-shadow: 0px;
+		position: relative;
+		padding: 0.5em; 
+		padding-left: 2em;
+		font-size: 1em;
+		height: 1.5em;
+		width: calc(50% - 2em);
+		border-radius: 0px 5em 5em 0px;
+	}
+	.lista{
+		margin-top: 1em;
+		font-weight: bolder;
+		font-size: 1.6em;
+		width: 80%;
+		margin-left: 10%;
+	}
+	ul li{
+		text-align: center;
+		padding: 0.3em;
+		width: 28%;
+		float: left;
+	}
+	.lista > a{
+		text-decoration: none;
+		color: #55b;
+	}
+/***************************************\
+|			 HEADER 	FOOTER 			|
+\***************************************/
+header, footer{
+	color: white;
+	background-color: #F97C17;
+	display: block;
+	position: static;
+	width: 100%;
+}
+header{
+	font-size: 2em;
+	height: 1.5em;
+	top: 0px;
+	box-shadow: 0px 0.2em 0.2em #212121;
+}
+header > *{
+	vertical-align: middle;
+}
+footer{
+	position: fixed;
+	text-align: center;
+	font-size: 1.2em;
+	bottom: 0px;
+	height: 1.5em;
+}
+.menu {
+	color: #fff;
+	padding-left:1em;
+	padding-right: 1em;
+	display: inline;
+	text-decoration: none;
+	font-weight: bolder;
+}
+/***************************************\
+|				FORMULARIO	 			|
+\***************************************/
+#insert{
+	display: table;
+}
+#delete{
+	display: none;
+}
+#update{
+	display: none;
+}
+form{
+	margin: 60px auto 30px auto;
+	width: 30em;
+	text-align: center;
+	background-image: url(../img/bgd.png);
+	padding: 10px;
+	border-radius: 2px;
+}
+	fieldset{
+		border: 0.1em solid #F97C17;
+	}
+	legend{
+		text-align: left;
+		color: #33f;
+		margin-left: 10px;
+	}
+	input, textarea {
+		width: 80%;
+		font-family: sans-serif;
+		font-size: 1.2em;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		clear:both
+		border-radius: 0;
+		resize: none;
+		padding: 0 5px;
+		border: 0.1rem solid #c7c7c7;
+		box-shadow: none;
+		color: #333;
+		background: #fff;
+	}
+	input[type="date"]{
+		width: 80%;
+		font-size: 1.2em;
+	}
+	td > input {
+		width: inherit;
+		border: 0.1em solid grey;
+		border-radius: 0.2em;
+	}
+/***************************************\
+|				BOTONES	 				|
+\***************************************/
+	button{
+		margin: 10px auto 10px auto;
+		text-align: center;
+		background: #d8d8d8;
+		color: #333;
+		height: 2em;
+		width: 8em;
+		border: none;
+		border-radius: 1em 1em 1em 1em;
+	}
+	#insbot {
+		cursor: pointer;
+		font-size: 1.25rem;
+		color: #D8D8D8;
+		background-color: #008AAA;
+		margin: 10px auto 10px auto;
+		width: 33%;
+		border: none;
+		border-radius: 1em 0 0 1em;
+	}
+	#delbot {
+		cursor: pointer;
+		font-size: 1.25rem;
+		color: #00CAF2;
+		background-color: #D8D8D8;
+		margin: 10px auto 10px auto;
+		width: 33%;
+		border: none;
+		border-radius: 0;
+	}
+	#updbot {
+		cursor: pointer;
+		font-size: 1.25rem;
+		color: #00CAF2;
+		background-color: #D8D8D8;
+		margin: 10px auto 10px auto;
+		width: 33%;
+		border: none;
+		border-radius: 0 1em 1em 0;
+	}
+	.botatras {
+		cursor: pointer;
+		font-size: 1.25rem;
+		color: #00CAF2;
+		background-color: #D8D8D8;
+		width: 30%;
+		border: none;
+	}
+	button[type="submit"] {
+		color: #d8d8d8;
+		font-size: 1.25rem;
+		background-color: #00CAF2;
+		border-radius: 1em 0 0 1em;
+	}
+	#ins {
+		color: #00CAF2;
+		background-color: #d8d8d8;
+		border-radius: 1em 0 0 1em;
+	}
+	#del {
+		color: #d8d8d8;
+		background-color: #E51E1E;
+		border-radius: 1em 0 0 1em;
+	}
+	button[type="reset"] {
+		color: #D8D8D8;
+		font-size: 1.25rem;
+		background-color: #F97C17;
+		border-radius: 0 1em 1em 0;
+	}
+	button:active {
+		color: #d8d8d8;
+		background: #008AAA;
+	}
+	.tabmenu {
+		margin-left: 10%;
+		width: 80%;
+	}
+/***************************************\
+|										|
+|				MOVILES 				|
+|										|
+\***************************************/
+
+@media (max-width: 14cm){
+	body{
+		font-size: 0.8em;
+	}
+
+	pre{
+		margin-left: calc(0px - 1.5em);
+		margin-right: calc(0px - 1.5em);
+		border-radius: 0px;
+	}
+/***************************************\
+|			HEADER	FOOTER 				|
+\***************************************/
+	header{
+		font-size: 2.5em;
+	}
+
+/***************************************\
+|				SIDEBAR 				|
+\***************************************/
+	.sidebar {
+		top: calc(3em + 10px);
+		font-size: 0.8em;
+		height: calc(100% - 10px - 3em);
+	}
+		.lista{
+			font-weight: normal;
+			font-size: 1.6em;
+		}
+/***************************************\
+|				FORMULARIO 				|
+\***************************************/
+	form{
+		margin: 0px;
+		margin-top: 40px;
+		width: calc(100% - 20px);
+		border-radius: 0px;
+	}
+		input{
+			font-size: 1.7em;
+		}
+}
+

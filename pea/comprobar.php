@@ -27,14 +27,17 @@ function cambiar(but1,but2,but3,item1,item2,item3){
 <?php
 /*Conecta con la base de datos*/
 include "conexion.php";
+#CODIGO PARA LA CONSULTA Y EL FORMULARIO DELETE
 $result = mysqli_query($con,"SELECT concat('El medicamento con el lote <b style=\"color: red;\"><i>', lote, ' </i></b>( ', concepto ,' ) ha caducado recientemente, su fecha de caducidad es ', caducidad) FROM lotes where (caducidad < curdate() or caducidad = curdate())");
 ?>
 <table align='center'><tr></th><th>Nº</th><th>Descripcion</th></tr>
 <?php
 $j=0;
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA
 while($salida = mysqli_fetch_array($result)){
 	echo "<tr><th>".++$j."</th><td>",$salida[0],"</td></tr>";
 }
+#FIN DE LA CONSULTA
 ?>
 	<tr><th colspan="2"><br></th></tr><tr><td colspan="2" bgcolor="#F97C17">Aviso: Si presiona el botón se borrarán automáticamente, anote primero el nº de Lote</td></tr><tr><th colspan="2"><a href="comdelete.php"><button class="botatras"><font face="ubuntu" color="#000" size="3"> Dar de baja los lotes</font> <span class="icon-arrow-right"></span></button></a></th></tr>
 </table>

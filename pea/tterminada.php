@@ -18,7 +18,9 @@ $result = mysqli_query($con,"SELECT * FROM t_terminada");
 ?>
 <table align='center'><tr align='center'><th>Nº</th><th>Descripcion</th></tr>
 <?php
+#FORMULARIO DELETE
 echo '<form name="altas" method="POST" action="ttdelete.php">';
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA JUNTO A UN CHECKBOX PARA EL BORRADO
 while($salida = mysqli_fetch_array($result)){
 	echo "<tr><td><input type='checkbox' name='borra[$salida[0]]'></td><td>",$salida[1],"</td></tr>";
 }
@@ -26,6 +28,7 @@ while($salida = mysqli_fetch_array($result)){
 <tr>
 	<tr><th colspan="6"><button type="submit" id="del"><span class="icon-cross2"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO DELETE-->
 <?php 
 #CERRAR CONEXIÓN CON LA BD
 mysqli_close($con);

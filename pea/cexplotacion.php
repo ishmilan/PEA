@@ -36,6 +36,7 @@ $result = mysqli_query($con,"SELECT * FROM c_explo");
 ?>
 <table align='center' id="insert"><tr align='center'><th>Nº</th><th>CEA</th><th>NIF</th><th>NOMBRE</th><th>Direccion</th><th>Teléfono</th><th>Mail</th></tr>
 <?php
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA
 $j=0;
 while($salida = mysqli_fetch_array($result)){
 echo "<tr><th>".++$j."</th>";
@@ -45,6 +46,7 @@ echo "<tr><th>".++$j."</th>";
 echo "</tr>";
 }
 ?>
+<!--FORMULARIO INSERT-->
 	<tr><form name="insert" method="POST" action="cexinsert.php"><th></th>
 		<td><input type="text" name="v0" value="" size="8"></td>
 		<td><input type="text" name="v1" value="" size="8"></td>
@@ -54,14 +56,16 @@ echo "</tr>";
 		<td><input type="email" name="v5" value=""></td></tr>
 	<tr><th colspan="7"><button type="submit" id="ins"><span class="icon-plus"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
-<!--FIN DE LA ACCIÓN INSERT-->
+<!--FIN DE LA CONSULTA Y EL FORMULARIO INSERT-->
 <?php
 #CODIGO PARA LA CONSULTA Y EL FORMULARIO DELETE
 $result = mysqli_query($con,"SELECT * FROM c_explo");
 ?>
 <table align='center' id="delete"><tr align='center'><th>Nº</th><th>CEA</th><th>NIF</th><th>NOMBRE</th><th>Direccion</th><th>Teléfono</th><th>Mail</th></tr>
 <?php
+#FORMULARIO DELETE
 echo '<form name="altas" method="POST" action="cexdelete.php">';
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA JUNTO A UN CHECKBOX PARA EL BORRADO
 while($salida = mysqli_fetch_array($result)){
 echo "<tr><td><input type='checkbox' name='borra[$salida[0]]'></td>";
 	for ($i=0;$i<6;$i++){
@@ -73,7 +77,7 @@ echo "</tr>";
 <tr>
 	<tr><th colspan="7"><button type="submit" id="del"><span class="icon-cross2"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
-<!--FIN DE LA ACCIÓN DELETE-->
+<!--FIN DE LA CONSULTA Y EL FORMULARIO DELETE-->
 <?php
 #CODIGO PARA LA CONSULTA Y EL FORMULARIO UPDATE
 $result = mysqli_query($con, "SELECT * FROM c_explo");
@@ -81,6 +85,7 @@ $result = mysqli_query($con, "SELECT * FROM c_explo");
 <table align='center' id="update"><tr align='center'><th>Nº</th><th>CEA</th><th>NIF</th><th>NOMBRE</th><th>Direccion</th><th>Teléfono</th><th>Mail</th></tr>
 <?PHP
 echo "<form name='modificar' method='POST' action='cexupdate.php'>";
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA EN EL FORMULARIO
 $j=0;
 while($salida = mysqli_fetch_array($result)){
 	echo "<tr><th>".++$j."</th>";
@@ -94,7 +99,7 @@ while($salida = mysqli_fetch_array($result)){
 ?>
 	<tr><th colspan="7"><button type="submit"><span class="icon-arrow-up"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
-<!--FIN DE LA ACCIÓN UPDATE-->
+<!--FIN DE LA CONSULTA Y EL FORMULARIO UPDATE-->
 <?php
 #CERRAR CONEXIÓN CON LA BD
 mysqli_close($con);

@@ -36,23 +36,27 @@ $result = mysqli_query($con,"SELECT * FROM t_pendiente");
 ?>
 <table align='center' id="insert"><tr align='center'><th>Nº</th><th>Descripcion</th></tr>
 <?php
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA
 $j=1;
 while($salida = mysqli_fetch_array($result)){
 echo "<tr><th>",$j++,"</th><td>",$salida[1],"</td></tr>";
 }
 ?>
+<!--FORMULARIO INSERT-->
 	<tr><form name="insert" method="POST" action="tpinsert.php"><th></th>
 		<td><input type="text" name="v1" value="" size="100%"></td></tr>
 	<tr><th colspan="6"><button type="submit" id="ins"><span class="icon-plus"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO INSERT-->
 <?php
 #CODIGO PARA LA CONSULTA Y EL FORMULARIO DELETE(ARCHIVAR)
 $result = mysqli_query($con,"SELECT * FROM t_pendiente");
 ?>
 <table align='center' id="delete"><tr align='center'><th></th><th>Descripcion</th></tr>
 <?php
+#FORMULARIO DELETE(ARCHIVAR)
 echo '<form name="altas" method="POST" action="tpdelete.php">';
-
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA JUNTO A UN CHECKBOX PARA EL BORRADO(ARCHIVAR)
 while($salida = mysqli_fetch_array($result)){
 	echo "<tr><td><input type='checkbox' name='borra[$salida[0]]'></td><td>",$salida[1],"</td></tr>";
 }
@@ -60,6 +64,7 @@ while($salida = mysqli_fetch_array($result)){
 <tr>
 	<tr><th colspan="6"><button type="submit" id="ins"><span class="icon-checkmark"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO DELETE-->
 <?php 
 #CODIGO PARA LA CONSULTA Y EL FORMULARIO UPDATE
 $result = mysqli_query($con, "SELECT * FROM t_pendiente");
@@ -67,6 +72,7 @@ $result = mysqli_query($con, "SELECT * FROM t_pendiente");
 <table align='center' id="update"><tr align='center'><th>Nº</th><th>Descripcion</th></tr>
 <?PHP
 echo "<form name='modificar' method='POST' action='tpupdate.php'>";
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA EN EL FORMULARIO
 $j=0;
 while($salida = mysqli_fetch_array($result)){
 	echo "<tr><th>".++$j."</th><td><input type='text' name='item1[$salida[0]]' value='$salida[1]' size='100%'></td></tr>";
@@ -74,6 +80,7 @@ while($salida = mysqli_fetch_array($result)){
 ?>
 	<tr><th colspan="6"><button type="submit"><span class="icon-arrow-up"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO UPDATE-->
 <?php 
 #CERRAR CONEXIÓN CON LA BD
 mysqli_close($con);

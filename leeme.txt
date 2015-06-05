@@ -1,9 +1,8 @@
 #Copyright (C) 2015 Ismael Milán Márquez
 #Este programa es software libre: usted puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General GNU publicada por la Fundación para el Software Libre, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior.
-#Este programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada. 
+#Este programa se distribuye con la esperanza de que sea útil, pero SIN GARANTÍA ALGUNA; ni siquiera la garantía implícita MERCANTIL o de APTITUD PARA UN PROPÓSITO DETERMINADO. Consulte los detalles de la Licencia Pública General GNU para obtener una información más detallada.
 #Debería haber recibido una copia de la Licencia Pública General GNU junto a este programa. En caso contrario, consulte <http://www.gnu.org/licenses/>.
 #Si desea contactar conmigo puede hacerlo a través de ish.professional@gmail.com o https://github.com/ishmilan
-
 _____________________________________________________________________________________
     ____  _   _ ____       _____ ____  __  __         _    ____  __  __ ___ _   _ 
    |  _ \| | | |  _ \     | ____/ ___||  \/  |       / \  |  _ \|  \/  |_ _| \ | |
@@ -43,7 +42,9 @@ ________________________________________________________________________________
                                                                           
 
  		Si ha adquirido la aplicación junto con la plataforma, ya está instalado.
- 		En caso contrario asegurese de tenir instalado en motor PHP y un servidor web en el equipo, tambien debe asegurarse de que o bien en esta máquina o en cualquier otra a la que tenga acceso esté instalado MySQL, echo esto copie la carpeta contenedora de la aplicación en algún directorio que pueda ser leido por el servidor web. Realizadas estas operaciones debe ir a conexion.php y editar las variables $host, $user y $pass con los valores correspondientes. Despues de eso debe ejecutar el script install/installDB.php y asegurarse de que la base de datos y todas las tablas se hayan creado correctamente. Una vez echo eso la aplicación está lista para usarse.
+ 		
+ 		En caso contrario asegurese de tener instalado el motor PHP y un servidor web en el equipo, tambien debe asegurarse de que o bien en esta máquina o en cualquier otra a la que tenga acceso esté instalado MySQL Serever, echo esto copie la carpeta contenedora de la aplicación en algún directorio que pueda ser leido por el servidor web, no se preocupe si carga los index.php porque se ha incluiudo un index.html que llama directamente al fichero php.
+ 		Realizadas estas operaciones debe ir a conexion.php y editar las variables $host(nombre o IP del servidor MySQL), $user(usuaro de MySQL) y $pass(contraseña del usuario) con los valores correspondientes. Despues de eso debe ejecutar el script install/installDB.php y asegurarse de que la base de datos y todas las tablas se hayan creado correctamente. Una vez echo eso la aplicación está lista para usarse.
 
 
  ___     _      _     ___   _   ___ ___   ___  ___   ___   _ _____ ___  ___ 
@@ -99,66 +100,106 @@ ________________________________________________________________________________
 
 		3.1.-LOS FICHEROS HTML
 			index.html         -> Llama a index.php
+			
 			ayuda.html         -> Manual: Breve ayuda para el usuario
+			
+			
+			
 		3.2.-LOS FICHEROS PHP
-			index.php          -> Menú de la aplicación
+			index.php          -> Menú de la aplicación, contiene enlaces a ccompra.php, cexplotacion.php, comprobar.php, medicamentos.php, entrada.php, salida.php, tpendiente.php, tterminada.php y a ayuda.html
 
 
-			conexion.php       -> Fichero que contiene las variables de conexión con la base de datos y establece la conexión, los demás ficheros que deben conectar con MySQL, tienen un include que al que llama.
+
+			conexion.php       -> Fichero que contiene las variables de conexión con la base de datos y establece la conexión, los demás ficheros que deben conectar con MySQL, tienen un include con el que es llamado.
 
 
-			ccompra.php        -> Fichero que contiene el formulario de los centros de compra
-			ccoinsert.php      -> Fichero que ejecuta la sentencia insert en c_compra
-			ccodelete.php      -> Fichero que ejecuta la sentencia delete en c_compra
-			ccoupdate.php      -> Fichero que ejecuta la sentencia update en c_compra
+
+			ccompra.php        -> Fichero que contiene el formulario de los centros de compra. Consulta en la base de datos y según la operación que realice llama a ccoinsert.php, ccodelete.php y ccoupdate.php
+			
+			ccoinsert.php      -> Fichero que ejecuta la sentencia insert en c_compra. Al terminar la operación vuelve a cargar ccompra.php
+			ccodelete.php      -> Fichero que ejecuta la sentencia delete en c_compra. Al terminar la operación vuelve a cargar ccompra.php
+			ccoupdate.php      -> Fichero que ejecuta la sentencia update en c_compra. Al terminar la operación vuelve a cargar ccompra.php
 
 
-			cexplotacion.php   -> Fichero que contiene el formulario de los centros de explotación agraria
-			cexinsert.php      -> Fichero que ejecuta la sentencia insert en c_explo
-			cexdelete.php      -> Fichero que ejecuta la sentencia delete en c_explo
-			cexupdate.php      -> Fichero que ejecuta la sentencia update en c_explo
+
+			cexplotacion.php   -> Fichero que contiene el formulario de los centros de explotación agraria. Consulta en la base de datos y según la operación que realice llama a cexinsert.php, cexdelete.php y cexupdate.php
+
+			cexinsert.php      -> Fichero que ejecuta la sentencia insert en c_explo. Al terminar la operación vuelve a cargar cexplotacion.php
+			cexdelete.php      -> Fichero que ejecuta la sentencia delete en c_explo. Al terminar la operación vuelve a cargar cexplotacion.php
+			cexupdate.php      -> Fichero que ejecuta la sentencia update en c_explo. Al terminar la operación vuelve a cargar cexplotacion.php
 
 
-			comprobar.php      -> Fichero que contiene el script de comprobación de lotes de medicamentos
-			comdelete.php      -> Fichero que ejecuta la sentencia delete en lotes
+
+			comprobar.php      -> Fichero que contiene el script de comprobación de lotes de medicamentos. Consulta en la base de datos y llama a comdelete.php en caso de realizar la operación.
+
+			comdelete.php      -> Fichero que ejecuta la sentencia delete en lotes. Al terminar la operación vuelve a cargar comprobar.php
 
 
-			medicamentos.php   -> Fichero que contiene el formulario de los medicamentos
-			medinsert.php      -> Fichero que ejecuta la sentencia insert en medicamentos
-			meddelete.php      -> Fichero que ejecuta la sentencia delete en medicamentos
-			medupdate.php      -> Fichero que ejecuta la sentencia update en medicamentos
+
+			medicamentos.php   -> Fichero que contiene el formulario de los medicamentos. Consulta en la base de datos y según la operación que realice llama a medinsert.php, meddelete.php y medupdate.php
+
+			medinsert.php      -> Fichero que ejecuta la sentencia insert en medicamentos. Al terminar la operación vuelve a cargar medicamentos.php
+			meddelete.php      -> Fichero que ejecuta la sentencia delete en medicamentos. Al terminar la operación vuelve a cargar medicamentos.php
+			medupdate.php      -> Fichero que ejecuta la sentencia update en medicamentos. Al terminar la operación vuelve a cargar medicamentos.php
 
 
-			entrada.php   -> Fichero que contiene el formulario de los registros de entrada
-			entinsert.php      -> Fichero que ejecuta la sentencia insert en entrada
-			entdelete.php      -> Fichero que ejecuta la sentencia delete en entrada
-			entupdate.php      -> Fichero que ejecuta la sentencia update en entrada
+
+			entrada.php   -> Fichero que contiene el formulario de los registros de entrada. Consulta en la base de datos y según la operación que realice llama a entinsert.php, entdelete.php y entupdate.php
+
+			entinsert.php      -> Fichero que ejecuta la sentencia insert en entrada y en lotes. Al terminar la operación vuelve a cargar entrada.php
+			entdelete.php      -> Fichero que ejecuta la sentencia delete en entrada. Al terminar la operación vuelve a cargar entrada.php
+			entupdate.php      -> Fichero que ejecuta la sentencia update en entrada. Al terminar la operación vuelve a cargar entrada.php
 
 
-			salida.php   -> Fichero que contiene el formulario de los registros de salida
-			salinsert.php      -> Fichero que ejecuta la sentencia insert en salida
-			saldelete.php      -> Fichero que ejecuta la sentencia delete en salida
-			salupdate.php      -> Fichero que ejecuta la sentencia update en salida
+
+			salida.php   -> Fichero que contiene el formulario de los registros de salida. Consulta en la base de datos y según la operación que realice llama a salinsert.php, saldelete.php y salupdate.php
+
+			salinsert.php      -> Fichero que ejecuta la sentencia insert en salida. Al terminar la operación vuelve a cargar salida.php
+			saldelete.php      -> Fichero que ejecuta la sentencia delete en salida. Al terminar la operación vuelve a cargar salida.php
+			salupdate.php      -> Fichero que ejecuta la sentencia update en salida. Al terminar la operación vuelve a cargar salida.php
 
 
-			tpendiente.php    -> Fichero que contiene el formulario de las tareas pendientes
-			tpinsert.php      -> Fichero que ejecuta la sentencia insert en t_pendiente
-			tpdelete.php      -> Fichero que ejecuta la sentencia delete en t_pendiente
-			tpupdate.php      -> Fichero que ejecuta la sentencia update en t_pendiente
+
+			tpendiente.php    -> Fichero que contiene el formulario de las tareas pendientes. Consulta en la base de datos y según la operación que realice llama a tpinsert.php, tpdelete.php y tpupdate.php
+
+			tpinsert.php      -> Fichero que ejecuta la sentencia insert en t_pendiente. Al terminar la operación vuelve a cargar tpendiente.php
+			tpdelete.php      -> Fichero que ejecuta la sentencia insert select de t_pendiente a t_terminada y sentencia delete en t_pendiente. Al terminar la operación vuelve a cargar tpendiente.php
+			tpupdate.php      -> Fichero que ejecuta la sentencia update en t_pendiente. Al terminar la operación vuelve a cargar tpendiente.php
 
 
-			tterminada.php    -> Fichero que contiene el script de las tareas terminadas
-			ttdelete.php      -> Fichero que ejecuta la sentencia delete en t_terminada
+
+			tterminada.php    -> Fichero que contiene el script de las tareas terminadas. Consulta en la base de datos y llama a ttdelete.php en caso de realizar la operación.
+
+			ttdelete.php      -> Fichero que ejecuta la sentencia delete en t_terminada. Al terminar la operación vuelve a cargar terminada.php
+			
+			
+			
 		3.3.-LA CARPETA CSS
-			core.css          -> Fichero CSS que contiene el estilo de la aplicación en su mayoría
+			core.css          -> Fichero CSS que contiene el estilo de la aplicación en su mayor parte.
+			
 			Ubuntu.ttf        -> Fichero de tipografía de Ubuntu
+			
 			UbuntuMono.ttf    -> Fichero de tipografía de Ubuntu Mono
+			
 			fuente/           -> Carpeta que contiene los iconos de Icomoon y un fichero style.css que contiene las clases para su uso.
+
+
+
 		3.4.-LA CARPETA IMG
 			ayuda01.png       -> Imagen explicativa de la aplicación
+
 			ayuda02.png       -> Imagen explicativa de la aplicación
+
 			bdg.png           -> Imagen de fondo de la aplicación
+
 			favicon.png       -> Imagen de favicon para la miniatura de la web
+
 			icon.png          -> Imagen, logo de la aplicación
+
+
+
 		3.5.-LA CARPETA INSTALL
 			installDB.php     -> Fichero que crea la base de datos y las tablas.
+			
+			
+			

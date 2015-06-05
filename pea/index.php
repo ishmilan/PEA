@@ -22,6 +22,7 @@ function cambiar(but1,but2,but3,item1,item2,item3){
 	<title>PHP-ESM-Admin</title>
 </head>
 <body>
+<!--MENÚ DE OPCIONES-->
 <table class="tabmenu">
 	<tr align="center"><th><a href="https://github.com/ishmilan"  target="_blank"><br>Developed by:<br><img src="img/icon.png"></a></th><th><br><br><h1 style="font-size: 3.5rem;color: #F97C17;">PHP-ESM-Admin</h1><h3>Administrador de la Empresa Sergio Milán en PHP</h3></th></tr>
 	<tr><th colspan="2"><hr><br></th></tr>
@@ -50,6 +51,9 @@ function cambiar(but1,but2,but3,item1,item2,item3){
 		<a href="tterminada.php"><font face="ubuntu" color="#000" size="4">Ver tareas terminadas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-arrow-right"></span></font></a>
 	</td></tr>
 </table>
-<footer><a href="ayuda.html" style="color: white;">Ayuda<a></footer>
+<!-- FIN MENÚ-->
+<footer>
+	<a href="ayuda.html" style="color: white;">Ayuda<a>
+</footer>
 </body>
 </html>

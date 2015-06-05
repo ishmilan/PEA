@@ -37,6 +37,7 @@ $result = mysqli_query($con,"SELECT * FROM medicamentos");
 	<table align='center' id="insert"><tr align='center'><th>Nº</th><th>REFERENCIA</th><th>NOMBRE</th><th colspan="2">Descripcion</th></tr>
 <?php
 $j=0;
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA
 while($salida = mysqli_fetch_array($result)){
 echo "<tr><th>".++$j."</th>";
 	for ($i=0;$i<3;$i++){
@@ -45,19 +46,23 @@ echo "<tr><th>".++$j."</th>";
 echo "</tr>";
 }
 ?>
+<!--FORMULARIO INSERT-->
 	<tr><form name="insert" method="POST" action="medinsert.php"><th></th>
 		<td><input type="text" name="v1" value=""></td>
 		<td><input type="text" name="v2" value=""></td>
 		<td><input type="text" name="v3" value="" size="40"></td></tr>
 	<tr><th colspan="6"><button type="submit" id="ins"><span class="icon-plus"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO INSERT-->
 <?php
 #CODIGO PARA LA CONSULTA Y EL FORMULARIO DELETE
 $result = mysqli_query($con,"SELECT * FROM medicamentos");
 ?>
 <table align='center' id="delete"><tr align='center'><th>Nº</th><th>REFERENCIA</th><th>NOMBRE</th><th colspan="2">Descripcion</th></tr>
 <?php
+#FORMULARIO DELETE
 echo '<form name="altas" method="POST" action="meddelete.php">';
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA JUNTO A UN CHECKBOX PARA EL BORRADO
 while($salida = mysqli_fetch_array($result)){
 echo "<tr><td><input type='checkbox' name='borra[$salida[0]]'></td>";
 	for ($i=0;$i<3;$i++){
@@ -69,6 +74,7 @@ echo "</tr>";
 <tr>
 	<tr><th colspan="6"><button type="submit" id="del"><span class="icon-cross2"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO DELETE-->
 <?php
 #CODIGO PARA LA CONSULTA Y EL FORMULARIO UPDATE
 $result = mysqli_query($con, "SELECT * FROM medicamentos");
@@ -76,6 +82,7 @@ $result = mysqli_query($con, "SELECT * FROM medicamentos");
 <table align='center' id="update"><tr align='center'><th>Nº</th><th>REFERENCIA</th><th>NOMBRE</th><th colspan="2">Descripcion</th></tr>
 <?PHP
 echo "<form name='modificar' method='POST' action='medupdate.php'>";
+#IMPRIME LA TABLA CON LOS RESULTADOS DE LA CONSULTA EN EL FORMULARIO
 $j=0;
 while($salida = mysqli_fetch_array($result)){
 	echo "<tr><th>".++$j."</th>";
@@ -86,7 +93,9 @@ while($salida = mysqli_fetch_array($result)){
 ?>
 	<tr><th colspan="6"><button type="submit"><span class="icon-arrow-up"></span></button><button type="reset"><span class="icon-cycle"></span></button></td></form></th></tr>
 </table>
+<!--FIN DE LA CONSULTA Y EL FORMULARIO UPDATE-->
 <?php 
+#CERRAR CONEXIÓN CON LA BD
 mysqli_close($con);
 ?>
 </body>

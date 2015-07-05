@@ -102,6 +102,7 @@ $lote="
 crear_db($con,"ESMDB");
 /*Crear tablas*/
 crear_c($con,$compra);
+crear_c($con,$medicamentos);
 crear_c($con,$explotacion);
 crear_c($con,$entrada);
 crear_c($con,$salida);

@@ -39,7 +39,7 @@ while($salida = mysqli_fetch_array($result)){
 }
 #FIN DE LA CONSULTA
 ?>
-	<tr><th colspan="2"><br></th></tr><tr><td colspan="2" bgcolor="#F97C17">Aviso: Si presiona el botón se borrarán automáticamente, anote primero el nº de Lote</td></tr><tr><th colspan="2"><a href="comdelete.php"><button class="botatras"><font face="ubuntu" color="#000" size="3"> Dar de baja los lotes</font> <span class="icon-arrow-right"></span></button></a></th></tr>
+	<tr><th colspan="2"><br></th></tr><tr><td colspan="2" bgcolor="#F97C17">Aviso: Si presiona el botón se borrarán automáticamente, creando una nueva tarea pendiente</td></tr><tr><th colspan="2"><a href="comdelete.php"><button class="botatras"><font face="ubuntu" color="#000" size="3"> Dar de baja los lotes</font> <span class="icon-arrow-right"></span></button></a></th></tr>
 </table>
 <?php
 	mysqli_close($con);

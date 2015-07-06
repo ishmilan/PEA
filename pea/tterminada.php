@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/fuente/style.css">
 	<link rel="stylesheet" type="text/css" href="css/core.css">
 	<link rel=icon href="img/favicon.png" sizes="16x16">
+	<script type="text/javascript" src="js/main.js"></script>
 	<title>PHP-ESM-Admin</title>
 </head>
 <body>

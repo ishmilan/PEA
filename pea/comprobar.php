@@ -5,20 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/fuente/style.css">
 	<link rel="stylesheet" type="text/css" href="css/core.css">
 	<link rel=icon href="img/favicon.png" sizes="16x16">
-	<script type="text/javascript">
-//FUNCIÓN JAVASCRIPT PARA EL SELECTOR DE ACCION DE LA PÁGINA
-function cambiar(but1,but2,but3,item1,item2,item3){
-		document.getElementById(but1).style.backgroundColor = "#008AAA";
-		document.getElementById(but1).style.color = "#D8D8D8";
-		document.getElementById(but2,but3).style.backgroundColor = "#D8D8D8";
-		document.getElementById(but2,but3).style.color = "#00CAF2";
-		document.getElementById(but3).style.backgroundColor = "#D8D8D8";
-		document.getElementById(but3).style.color = "#00CAF2";
-		document.getElementById(item1).style.display = "table";
-		document.getElementById(item2).style.display = "none";
-		document.getElementById(item3).style.display = "none";
-	};
-	</script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<title>PHP-ESM-Admin</title>
 </head>
 <body>

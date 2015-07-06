@@ -1,3 +1,15 @@
+//FUNCIÓN JAVASCRIPT PARA EL SELECTOR DE ACCION DE LA PÁGINA
+function cambiar(but1,but2,but3,item1,item2,item3){
+    document.getElementById(but1).style.backgroundColor = "#008AAA";
+    document.getElementById(but1).style.color = "#D8D8D8";
+    document.getElementById(but2,but3).style.backgroundColor = "#D8D8D8";
+    document.getElementById(but2,but3).style.color = "#00CAF2";
+    document.getElementById(but3).style.backgroundColor = "#D8D8D8";
+    document.getElementById(but3).style.color = "#00CAF2";
+    document.getElementById(item1).style.display = "table";
+    document.getElementById(item2).style.display = "none";
+    document.getElementById(item3).style.display = "none";
+  };
 /*
   SortTable
   version 2
